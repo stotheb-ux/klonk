@@ -1,0 +1,157 @@
+/* Klonk - Farben aus dem App-Icon und Shared/Support/Palette.swift. Aufbau wie die
+   Scanloft-Seiten (sebo.github.io/scanloft), damit beide Apps gleich auftreten. */
+:root {
+  --sheet:      #F7FBF9;
+  --desk:       #EEF4F1;
+  --card:       #FFFFFF;
+  --ink:        #111816;
+  --ink-soft:   #55625E;
+  --ink-faint:  #8E9B96;
+  --accent:     #0B8566;
+  --rule:       #DCE6E2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sheet:     #0E1513;
+    --desk:      #070B0A;
+    --card:      #131C19;
+    --ink:       #EAF2EF;
+    --ink-soft:  #A3B2AD;
+    --ink-faint: #6B7A75;
+    --accent:    #5CF2C2;
+    --rule:      #24302C;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--desk);
+  color: var(--ink);
+  font: 400 18px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  letter-spacing: -0.003em;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Kopf ---------- */
+
+header.site {
+  padding: 48px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lang a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 6px 13px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+}
+.lang a:hover { color: var(--accent); border-color: var(--accent); }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 650;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand svg { display: block; border-radius: 7px; }
+
+/* ---------- Fließtext ---------- */
+
+h1 {
+  font-size: clamp(34px, 6.5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  font-weight: 680;
+  margin: 40px 0 20px;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 640;
+  margin: 64px 0 16px;
+}
+
+p { margin: 0 0 18px; }
+
+.lead {
+  font-size: 21px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+
+strong { font-weight: 640; }
+
+.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.links a {
+  padding: 10px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 16px;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Datenschutz-/Impressumsseiten ---------- */
+
+.doc h2 { font-size: 22px; margin: 44px 0 12px; }
+.doc h2:first-of-type { margin-top: 40px; }
+.doc ul { color: var(--ink-soft); padding-left: 22px; }
+.doc li { margin-bottom: 9px; }
+.doc .updated { color: var(--ink-faint); font-size: 16px; margin-top: -8px; }
+.doc address { font-style: normal; color: var(--ink-soft); }
+.todo {
+  background: var(--desk);
+  border: 1px dashed var(--rule);
+  border-radius: 10px;
+  padding: 2px 8px;
+  color: #C2410C;
+  font-size: 0.95em;
+}
+
+/* ---------- Fuß ---------- */
+
+footer.site {
+  margin-top: 72px;
+  padding: 28px 0 56px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-faint);
+  font-size: 16px;
+}
+footer.site nav { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 12px; }
+footer.site a { color: var(--ink-soft); text-decoration: none; }
+footer.site a:hover { color: var(--accent); text-decoration: underline; }
+
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  .wrap { padding: 0 20px; }
+  h2 { font-size: 23px; margin-top: 52px; }
+}
